@@ -12,6 +12,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Lint CSS files
+        run: |
+          npx stylelint "**/*.css" --fix  # This will lint and attempt to fix CSS issues
+    
       - name: Build
         run: |
           echo "Building the project..."
@@ -30,7 +43,7 @@ jobs:
           # Add your testing commands here
 
   deploy:
-    needs: test
+    needs: test  # Ensure this runs after the test job
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -39,6 +52,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
-          branch: gh-pages  # This is the branch where you want to deploy
-          folder: ./        # The folder containing your static site files
-          token: ${{ secrets.GITHUB_TOKEN }}  # Use the GitHub token for permissions
+          branch: gh-pages     # The branch where your site will be published
+          folder: devops       # The folder containing your static site (index.html and images)
+          token: ${{ secrets.GITHUB_TOKEN }}

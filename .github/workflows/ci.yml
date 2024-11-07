@@ -30,7 +30,7 @@ jobs:
           # Add your testing commands here
 
   deploy:
-    needs: test  # Ensure this runs after the test job
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -39,6 +39,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
-          branch: gh-pages     # The branch where your site will be published
-          folder: ./    # Updated path to the folder containing index.html and images
-          token: ${{ secrets.GITHUB_TOKEN }}  # Use 'token' instead of 'github_token'
+          branch: gh-pages
+          folder: ./devops  # Adjust based on your directory structure
+          token: ${{ secrets.DEPLOY_TOKEN }}  # Use personal access token

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozy Corner Café Menu</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0e6d2;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #4a3c31;
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .menu-item {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .menu-item-content {
+            padding: 15px;
+        }
+        .menu-item h2 {
+            margin: 0 0 10px;
+            color: #4a3c31;
+        }
+        .menu-item p {
+            margin: 0;
+            color: #666;
+        }
+        .price {
+            font-weight: bold;
+            color: #8c7851;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cozy Corner Café Menu</h1>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="coffee2.jpg" alt="Cappuccino">
+                <div class="menu-item-content">
+                    <h2>Cappuccino</h2>
+                    <p>Rich espresso topped with creamy foam</p>
+                    <p class="price">$3.99</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="coffee1.jpg" alt="Latte">
+                <div class="menu-item-content">
+                    <h2>Latte</h2>
+                    <p>Smooth espresso with steamed milk</p>
+                    <p class="price">$4.49</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="coffee3.jpg" alt="Croissant">
+                <div class="menu-item-content">
+                    <h2>Americano</h2>
+                    <p>Fresh coffee brewed at hot water</p>
+                    <p class="price">$2.99</p>
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+    <div>Some text
+
+</body>
+</html>

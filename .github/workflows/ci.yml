@@ -40,5 +40,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
           branch: gh-pages
-          folder: ./devops  # Adjust based on your directory structure
-          token: ${{ secrets.DEPLOY_TOKEN }}  # Use personal access token
+          folder: ./    # Points to the root directory
+          token: ${{ secrets.DEPLOY_TOKEN }}

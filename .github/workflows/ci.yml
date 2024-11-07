@@ -1,4 +1,4 @@
-name: CI pipeline
+name: Build, Test, and Deploy
 
 on:
   push:
@@ -16,7 +16,6 @@ jobs:
         run: |
           echo "Building the project..."
           # Add any build commands here if necessary
-          # For example, you can use npm or any other build tool if applicable
 
   test:
     needs: build
@@ -29,10 +28,9 @@ jobs:
         run: |
           echo "Running tests..."
           # Add your testing commands here
-          # For example, if you have a testing framework, you can run it here
 
   deploy:
-    needs: test
+    needs: test  # Ensure this runs after the test job
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -41,6 +39,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
-          branch: gh-pages
-          folder: devops
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages     # The branch where your site will be published
+          folder: devops       # The folder containing your static site (index.html and images)
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # Token for authentication

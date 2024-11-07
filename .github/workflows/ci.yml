@@ -41,4 +41,4 @@ jobs:
         with:
           branch: gh-pages     # The branch where your site will be published
           folder: devops       # The folder containing your static site (index.html and images)
-          github_token: ${{ secrets.GITHUB_TOKEN }}  # Token for authentication
+          token: ${{ secrets.GITHUB_TOKEN }}  # Use 'token' instead of 'github_token'

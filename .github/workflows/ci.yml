@@ -30,15 +30,15 @@ jobs:
           # Add your testing commands here
 
   deploy:
-    needs: test  # Ensure this runs after the test job
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+  needs: test  # Ensure this runs after the test job
+  runs-on: ubuntu-latest
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.5
-        with:
-          branch: gh-pages     # The branch where your site will be published
-          folder: devops       # The folder containing your static site (index.html and images)
-          token: ${{ secrets.GITHUB_TOKEN }}  # Use 'token' instead of 'github_token'
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@4.1.5
+      with:
+        branch: gh-pages     # The branch where your site will be published
+        folder: ./devops     # The folder containing your static site (adjusted path)
+        token: ${{ secrets.GITHUB_TOKEN }}  # Use 'token' instead of 'github_token'
